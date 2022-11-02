@@ -10,4 +10,5 @@ struct Profile: Codable, Hashable {
     let selectedCourse: Course?
     let locale: ProfileLocale?
     let testMode: TestMode?
+    let app: App?
 }

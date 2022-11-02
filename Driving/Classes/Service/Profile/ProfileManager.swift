@@ -20,12 +20,14 @@ protocol ProfileManagerProtocol {
              selectedCourse: Course?,
              country: String?,
              state: String?,
-             language: String?) -> Single<Void>
+             language: String?,
+             app: App?) -> Single<Void>
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?>
     func obtainSelectedCourse(forceUpdate: Bool) -> Single<Course?>
     func obtainTestMode(forceUpdate: Bool) -> Single<TestMode?>
     func obtainLocale(forceUpdate: Bool) -> Single<ProfileLocale?>
     func obtainCountries(forceUpdate: Bool) -> Single<[Country]>
+    func obtainApp(forceUpdate: Bool) -> Single<App?>
     func syncTokens(oldToken: String, newToken: String) -> Single<Void>
     func login(userToken: String) -> Single<Void>
 }
@@ -37,6 +39,7 @@ final class ProfileManager: ProfileManagerProtocol {
         static let testModeKey = "profile_manager_test_mode_key"
         static let localeKey = "profile_manager_locale_key"
         static let countriesKey = "profile_manager_countries_key"
+        static let appKey = "profile_manager_app_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
@@ -58,7 +61,8 @@ extension ProfileManager {
              selectedCourse: Course? = nil,
              country: String? = nil,
              state: String? = nil,
-             language: String? = nil) -> Single<Void> {
+             language: String? = nil,
+             app: App? = nil) -> Single<Void> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -76,7 +80,8 @@ extension ProfileManager {
                                  testMinutes: testMinutes,
                                  testNumber: testNumber,
                                  testWhen: testWhen,
-                                 notificationKey: notificationKey)
+                                 notificationKey: notificationKey,
+                                 app: app?.code)
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
@@ -90,6 +95,7 @@ extension ProfileManager {
                 self.store(countryCode: country, languageCode: language, stateCode: state)
                 self.store(selectedCourse: selectedCourse)
                 self.store(selectedCoursesIds: selectedCoursesIds)
+                self.store(app: app)
             })
     }
     
@@ -111,6 +117,10 @@ extension ProfileManager {
     
     func obtainCountries(forceUpdate: Bool) -> Single<[Country]> {
         forceUpdate ? loadCountries() : cachedCountries()
+    }
+    
+    func obtainApp(forceUpdate: Bool) -> Single<App?> {
+        forceUpdate ? loadApp() : cachedApp()
     }
     
     func syncTokens(oldToken: String, newToken: String) -> Single<Void> {
@@ -135,18 +145,21 @@ private extension ProfileManager {
         let selectedCourse = cachedSelectedCourse()
         let testMode = cachedTestMode()
         let locale = cachedLocale()
+        let app = cachedApp()
         
         return Single
             .zip(
                 selectedCoursesIds,
                 selectedCourse,
                 testMode,
-                locale
-            ) { selectedCoursesIds, selectedCourse, testMode, locale -> Profile in
+                locale,
+                app
+            ) { selectedCoursesIds, selectedCourse, testMode, locale, app -> Profile in
                 Profile(selectedCoursesIds: selectedCoursesIds ?? [],
                         selectedCourse: selectedCourse,
                         locale: locale,
-                        testMode: testMode)
+                        testMode: testMode,
+                        app: app)
             }
     }
     
@@ -374,6 +387,43 @@ private extension ProfileManager {
                 }
                 
                 self.store(countries: countries)
+            })
+    }
+    
+    func store(app: App?) {
+        guard let app = app, let data = try? JSONEncoder().encode(app) else {
+            return
+        }
+        
+        UserDefaults.standard.set(data, forKey: Constants.appKey)
+    }
+    
+    func cachedApp() -> Single<App?> {
+        Single<App?>
+            .create { event in
+                guard
+                    let data = UserDefaults.standard.data(forKey: Constants.appKey),
+                    let app = try? JSONDecoder().decode(App.self, from: data)
+                else {
+                    event(.success(nil))
+                    return Disposables.create()
+                }
+                
+                event(.success(app))
+                
+                return Disposables.create()
+            }
+    }
+    
+    func loadApp() -> Single<App?> {
+        loadProfile()
+            .map { $0?.app }
+            .do(onSuccess: { [weak self] app in
+                guard let self = self, let app = app else {
+                    return
+                }
+                
+                self.store(app: app)
             })
     }
 }

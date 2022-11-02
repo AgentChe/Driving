@@ -16,6 +16,8 @@ final class OnboardingAnalytics {
             name = "Topics Screen"
         case .locale:
             name = "Locale Screen"
+        case .apps:
+            name = "Exam Screen"
         case .goals:
             name = "Goals Screen"
         case .mode:

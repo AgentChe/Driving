@@ -22,6 +22,7 @@ struct SetRequest: APIRequestBody {
     private let testNumber: Int?
     private let testWhen: [Int]?
     private let notificationKey: String?
+    private let app: String?
     
     init(userToken: String,
          country: String? = nil,
@@ -36,7 +37,8 @@ struct SetRequest: APIRequestBody {
          testMinutes: Int? = nil,
          testNumber: Int? = nil,
          testWhen: [Int]? = nil,
-         notificationKey: String? = nil) {
+         notificationKey: String? = nil,
+         app: String? = nil) {
         self.userToken = userToken
         self.country = country
         self.state = state
@@ -51,6 +53,7 @@ struct SetRequest: APIRequestBody {
         self.testNumber = testNumber
         self.testWhen = testWhen
         self.notificationKey = notificationKey
+        self.app = app
     }
     
     var url: String {
@@ -117,6 +120,10 @@ struct SetRequest: APIRequestBody {
         
         if let notificationKey = self.notificationKey {
             params["notification_key"] = notificationKey
+        }
+        
+        if let app = self.app {
+            params["custom"] = app
         }
         
         return params

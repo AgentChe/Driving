@@ -354,6 +354,9 @@
 		DE919053291004B600443765 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE919047291004B600443765 /* LaunchScreen.storyboard */; };
 		DE919054291004B600443765 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE919048291004B600443765 /* GoogleService-Info.plist */; };
 		DE919055291004B600443765 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE91904A291004B600443765 /* Localizable.strings */; };
+		DEA738A52912948F0065486A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA738A42912948F0065486A /* App.swift */; };
+		DEA738A72912A3380065486A /* OAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA738A62912A3370065486A /* OAppCell.swift */; };
+		DEA738A92912A7B00065486A /* OAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA738A82912A7B00065486A /* OAppsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -709,6 +712,9 @@
 		DE919047291004B600443765 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE919048291004B600443765 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE91904B291004B600443765 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DEA738A42912948F0065486A /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		DEA738A62912A3370065486A /* OAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAppCell.swift; sourceTree = "<group>"; };
+		DEA738A82912A7B00065486A /* OAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAppsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1160,6 +1166,7 @@
 				DE918D96291003CE00443765 /* State.swift */,
 				DE918D97291003CE00443765 /* ProfileLocale.swift */,
 				DE918D98291003CE00443765 /* Country.swift */,
+				DEA738A42912948F0065486A /* App.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2044,6 +2051,7 @@
 				DE918EE9291003CE00443765 /* OSlideWhenTakingView.swift */,
 				DE918EEA291003CE00443765 /* OSlideMinutesAtTimeView.swift */,
 				DE918EEB291003CE00443765 /* OSlideLocaleView.swift */,
+				DEA738A82912A7B00065486A /* OAppsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2064,6 +2072,7 @@
 				DE918ED7291003CE00443765 /* TopicsCollection */,
 				DE918EDC291003CE00443765 /* OSlidePlanCell.swift */,
 				DE918EDD291003CE00443765 /* OGoalCell.swift */,
+				DEA738A62912A3370065486A /* OAppCell.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -2398,6 +2407,7 @@
 				DE918F04291003CE00443765 /* SignError.swift in Sources */,
 				DE918F58291003CE00443765 /* GetStatsResponseMapper.swift in Sources */,
 				DE919039291003CF00443765 /* OSlideLocaleView.swift in Sources */,
+				DEA738A92912A7B00065486A /* OAppsView.swift in Sources */,
 				DE919030291003CF00443765 /* OSlideView.swift in Sources */,
 				DE918FC4291003CF00443765 /* TestBottomView.swift in Sources */,
 				DE919009291003CF00443765 /* MainProgressView.swift in Sources */,
@@ -2441,6 +2451,7 @@
 				DE918F86291003CF00443765 /* SettingsTableSection.swift in Sources */,
 				DE918FEF291003CF00443765 /* FlashcardsTopicsViewController.swift in Sources */,
 				DE918FF1291003CF00443765 /* FlashcardsTopicsTableView.swift in Sources */,
+				DEA738A52912948F0065486A /* App.swift in Sources */,
 				DE918FBA291003CF00443765 /* QuestionTableContentCell.swift in Sources */,
 				DE918F3A291003CE00443765 /* TestStatsManager.swift in Sources */,
 				DE919006291003CF00443765 /* MainRateCell.swift in Sources */,
@@ -2479,6 +2490,7 @@
 				DE919020291003CF00443765 /* OMinutesAtTimeCell.swift in Sources */,
 				DE918F47291003CE00443765 /* GetProfileResponse.swift in Sources */,
 				DE918FA8291003CF00443765 /* FlashCardView.swift in Sources */,
+				DEA738A72912A3380065486A /* OAppCell.swift in Sources */,
 				DE918F4C291003CE00443765 /* SetRequest.swift in Sources */,
 				DE91903A291003CF00443765 /* OnboardingView.swift in Sources */,
 				DE918F44291003CE00443765 /* Country.swift in Sources */,

@@ -15,4 +15,5 @@ final class OnboardingScope {
     var notificationKey: String?
     var selectedCourses: [Course]?
     var testMode: TestMode?
+    var app: App?
 }

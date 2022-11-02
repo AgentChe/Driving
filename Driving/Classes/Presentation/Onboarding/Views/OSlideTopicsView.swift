@@ -61,10 +61,12 @@ final class OSlideTopicsView: OSlideView {
                     return
                 }
                 
-                if elements.isEmpty {
+                let filteredElements = self.filterElementsByApp(elements: elements)
+                
+                if filteredElements.isEmpty {
                     self.openError()
                 } else {
-                    self.topicsView.setup(elements: elements)
+                    self.topicsView.setup(elements: filteredElements)
                     self.topicsCollectionViewDidChangeSelection()
                 }
             })
@@ -132,6 +134,11 @@ private extension OSlideTopicsView {
         
         button.isEnabled = !isEmpty
         button.alpha = isEmpty ? 0.4 : 1
+    }
+    
+    func filterElementsByApp(elements: [TopicsCollectionElement]) -> [TopicsCollectionElement] {
+        let appCode = scope.app?.code ?? ""
+        return elements.filter { $0.course.name.lowercased().contains(appCode.lowercased()) }
     }
 }
 

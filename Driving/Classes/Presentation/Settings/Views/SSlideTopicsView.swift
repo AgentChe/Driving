@@ -37,27 +37,17 @@ final class SSlideTopicsView: SSlideView {
     }
     
     override func moveToThis() {
-        func source() -> Single<[TopicsCollectionElement]> {
-            coursesManager
-                .obtainCourses()
-                .map { courses -> [TopicsCollectionElement] in
-                    courses.map { course -> TopicsCollectionElement in
-                        TopicsCollectionElement(course: course, isSelected: course.selected)
-                    }
-                }
-        }
+        let elements = makeElements()
+        let app = makeApp()
         
-        func trigger(error: Error) -> Observable<Void> {
-            openError()
-        }
-        
-        observableRetrySingle
-            .retry(source: { source() },
-                   trigger: { trigger(error: $0) })
-            .trackActivity(activity)
-            .subscribe(onNext: { [weak self] elements in
-                self?.topicsView.setup(elements: elements)
-                self?.topicsCollectionViewDidChangeSelection()
+        Driver
+            .combineLatest(elements, app) { elements, app -> [TopicsCollectionElement] in
+                let appCode = app?.code ?? ""
+                return elements.filter { $0.course.name.lowercased().contains(appCode.lowercased()) }
+            }
+            .drive(Binder(self) { base, elements in
+                base.topicsView.setup(elements: elements)
+                base.topicsCollectionViewDidChangeSelection()
             })
             .disposed(by: disposeBag)
     }
@@ -111,6 +101,34 @@ private extension SSlideTopicsView {
                 activity ? self.preloader.startAnimating() : self.preloader.stopAnimating()
             })
             .disposed(by: disposeBag)
+    }
+    
+    func makeElements() -> Driver<[TopicsCollectionElement]> {
+        func source() -> Single<[TopicsCollectionElement]> {
+            coursesManager
+                .obtainCourses()
+                .map { courses -> [TopicsCollectionElement] in
+                    courses.map { course -> TopicsCollectionElement in
+                        TopicsCollectionElement(course: course, isSelected: course.selected)
+                    }
+                }
+        }
+        
+        func trigger(error: Error) -> Observable<Void> {
+            openError()
+        }
+        
+        return observableRetrySingle
+            .retry(source: { source() },
+                   trigger: { trigger(error: $0) })
+            .trackActivity(activity)
+            .asDriver(onErrorDriveWith: .never())
+    }
+    
+    func makeApp() -> Driver<App?> {
+        profileManager
+            .obtainApp(forceUpdate: false)
+            .asDriver(onErrorJustReturn: nil)
     }
     
     func openError() -> Observable<Void> {

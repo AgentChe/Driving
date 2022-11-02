@@ -36,6 +36,10 @@
 "Onboarding.SlideCountry.Title" = "Choose\nyour country";
 "Onboarding.SlideState.Title" = "Select your state,\nprovince or district";
 "Onboarding.SlideLanguage.Title" = "Select your language";
+"Onboarding.App.Title" = "Choose your exam";
+"Onboarding.App.CDL" = "CDL";
+"Onboarding.App.DMV" = "DMV";
+"Onboarding.App.Moto" = "Moto";
 "Onboarding.Goals.Title" = "Should we focus on\nsomething in\nparticular?";
 "Onboarding.Goals.Cell1" = "More practice questions";
 "Onboarding.Goals.Cell2" = "More flashcards";

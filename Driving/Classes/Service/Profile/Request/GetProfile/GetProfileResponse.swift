@@ -18,11 +18,13 @@ final class GetProfileResponse {
         let selectedCourse = selectedCourse(data)
         let locale = locale(data)
         let testMode = testMode(data)
+        let app = app(data)
         
         return Profile(selectedCoursesIds: selectedCoursesIds ?? [],
                        selectedCourse: selectedCourse,
                        locale: locale,
-                       testMode: testMode)
+                       testMode: testMode,
+                       app: app)
     }
 }
 
@@ -62,5 +64,13 @@ private extension GetProfileResponse {
         ProfileLocale(countryCode: json["country"] as? String,
                       languageCode: json["language"] as? String,
                       stateCode: json["state"] as? String)
+    }
+    
+    static func app(_ json: [String: Any]) -> App? {
+        guard let code = json["custom"] as? String else {
+            return nil
+        }
+        
+        return App(code: code)
     }
 }

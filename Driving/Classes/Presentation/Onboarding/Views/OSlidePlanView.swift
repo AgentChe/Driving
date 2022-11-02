@@ -74,7 +74,8 @@ private extension OSlidePlanView {
                              notificationKey: self.scope.notificationKey,
                              testMode: self.scope.testMode,
                              selectedCoursesIds: self.scope.selectedCourses?.map { $0.id },
-                             selectedCourse: self.scope.selectedCourses?.first)
+                             selectedCourse: self.scope.selectedCourses?.first,
+                             app: self.scope.app)
                 }
                 
                 return self.observableRetrySingle
