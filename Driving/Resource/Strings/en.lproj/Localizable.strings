@@ -1,0 +1,219 @@
+// MARK: General
+"Cancel" = "Cancel";
+"Continue" = "Continue";
+
+// MARK: ImagePicker
+"ImagePicker.TakePhoto" = "Take photo";
+"ImagePicker.CameraRoll" = "Camera roll";
+"ImagePicker.PhotoLibrary" = "Photo library";
+
+// MARK: Course
+"Course.Tab.Stats" = "Stats";
+"Course.Tab.Study" = "Study";
+
+// MARK: Splash
+"Splash.Title.Part1" = "Prepared by\n";
+"Splash.Title.Part2" = "CERTIFIED\n";
+"Splash.Title.Part3" = "experts";
+"Splash.Preloader1" = "Checking your account...";
+"Splash.Preloader2" = "Syncing the question bank...";
+"Splash.Preloader3" = "Setting up the onboarding...";
+"Splash.Preloader4" = "Setting up your account...";
+
+// MARK: Onboarding
+"Onboarding.FailedToSave" = "Failed to save";
+"Onboarding.Next" = "Next";
+"Onboarding.Yes" = "Yes";
+"Onboarding.No" = "No";
+"Onboarding.Welcome.Title1" = "Efficient study plan";
+"Onboarding.Welcome.Subtitle1" = "The question bank is divided into bite-sized sets to keep you motivated";
+"Onboarding.Welcome.Title2" = "Learn in 5 different\nways";
+"Onboarding.Welcome.Subtitle2" = "Save time. Study efficiently with 5 different exam modes";
+"Onboarding.Welcome.Title3" = "Over 300,000\nstudents";
+"Onboarding.Welcome.Subtitle3" = "Students claim to feel more confident with the real exam after using our app";
+"Onboarding.Welcome.GetStarted" = "Get started";
+"Onboarding.SlideTopics.Title" = "Select all\nrequired topics";
+"Onboarding.SlideCountry.Title" = "Choose\nyour country";
+"Onboarding.SlideState.Title" = "Select your state,\nprovince or district";
+"Onboarding.SlideLanguage.Title" = "Select your language";
+"Onboarding.Goals.Title" = "Should we focus on\nsomething in\nparticular?";
+"Onboarding.Goals.Cell1" = "More practice questions";
+"Onboarding.Goals.Cell2" = "More flashcards";
+"Onboarding.Goals.Cell3" = "More theory";
+"Onboarding.Goals.Header" = "You can alter these settings later";
+"Onboarding.SlideWhenTaking.Title" = "When are you\ntaking your exam?";
+"Onboarding.SlideWhenTaking.Header" = "You can alter these settings later";
+"Onboarding.SlideCount.Title" = "How many tests\nwould you like to\ntake daily?";
+"Onboarding.SlideCount.PopularChoise" = "Popular choice: 5 tests";
+"Onboarding.SlideCount.LearningSpeed" = "learning\nspeed %.1f";
+"Onboarding.Preloader.Title" = "Preparing your\nindividual study\nplan...";
+"Onboarding.Preloader.Cell1" = "Analyzing your skill level  %i%%";
+"Onboarding.Preloader.Cell2" = "Analyzing your goals  %i%%";
+"Onboarding.Preloader.Cell3" = "Processing required exams %i%%";
+"Onboarding.SlidePlan.Title" = "Your personal study plan is\nready!";
+"Onboarding.SlidePlan.CellsTitle" = "Your individual plan:";
+"Onboarding.SlidePlan.Cell1.Title" = "2000+ individual questions";
+"Onboarding.SlidePlan.Cell1.Subtitle" = "Up-to-date questions, which reflect your territory-specific rules";
+"Onboarding.SlidePlan.Cell2.Title" = "Progress tracking";
+"Onboarding.SlidePlan.Cell2.Subtitle" = "Track your pass rate and keep improving every day";
+"Onboarding.SlidePlan.Cell3.Title" = "Supportive materials";
+"Onboarding.SlidePlan.Cell3.Subtitle" = "Understand, not memorize. Useful set of materials (if applicable to your territory)";
+"Onboarding.SlidePlan.Cell4.Title" = "Exam simulator";
+"Onboarding.SlidePlan.Cell4.Subtitle" = "High quality exam-like questions presented in different exam modes";
+"Onboarding.SlidePlan.Button" = "Get my plan";
+"Onboarding.Mode.Title" = "Set up your exam mode";
+"Onboarding.Mode.Subtitle" = "Swipe to choose from the options";
+"Onboarding.Mode.Cell1.Title" = "No explanations";
+"Onboarding.Mode.Cell1.Subtitle" = "See the correct answer, then move to the next question";
+"Onboarding.Mode.Cell2.Title" = "Full set";
+"Onboarding.Mode.Cell2.Subtitle" = "See the correct answer, read the full explanation, then move on";
+"Onboarding.Mode.Cell3.Title" = "Exam-like";
+"Onboarding.Mode.Cell3.Subtitle" = "Get to know the score only after answering all questions";
+"Onboarding.Mode.Header" = "You can alter these settings later";
+"Onboarding.MinutesAtTime.Title" = "How many minutes\ncan you spend\nlearning at a time?";
+"Onboarding.MinutesAtTime.Casual" = "Casual";
+"Onboarding.MinutesAtTime.Regular" = "Regular";
+"Onboarding.MinutesAtTime.Serious" = "Serious";
+"Onboarding.MinutesAtTime.Intense" = "Intense";
+"Onboarding.MinutesAtTime.5min" = "5 min";
+"Onboarding.MinutesAtTime.10min" = "10 min";
+"Onboarding.MinutesAtTime.15min" = "15 min";
+"Onboarding.MinutesAtTime.20min" = "20 min";
+"Onboarding.MinutesAtTime.Header" = "You can alter these settings later";
+"Onboarding.Experience.Title" = "Describe your driving\nexperience";
+"Onboarding.Experience.Period1" = "0-2 years";
+"Onboarding.Experience.Period2" = "2-4 years";
+"Onboarding.Experience.Period3" = "4-6 years";
+"Onboarding.Experience.Period4" = "6+ years";
+"Onboarding.Experience.Header" = "You can alter these settings later";
+"Onboarding.WhenStudy.Title" = "When do you want\nto study?";
+"Onboarding.WhenStudy.Cell1" = "Early morning";
+"Onboarding.WhenStudy.Cell2" = "At noon";
+"Onboarding.WhenStudy.Cell3" = "After work";
+"Onboarding.WhenStudy.Cell4" = "Before bedtime";
+"Onboarding.WhenStudy.Cell5" = "No particular preference";
+"Onboarding.WhenStudy.Header" = "You can alter these settings later";
+"Onboarding.Push.Title" = "Stay on track!";
+"Onboarding.Push.Subtitle" = "Receive useful reminders regularly to reach your goals quicker";
+"Onboarding.Push.Allow" = "Enable notifications";
+"Onboarding.Push.NotNow" = "Not now";
+
+// MARK: Study
+"Study.Title" = "Study";
+"Study.Day.One" = "day";
+"Study.Day.Two" = "days";
+"Study.Day.Many" = "days";
+"Study.Streak" = "streak";
+"Study.TakeTest" = "Take a test";
+"Study.TakeFreeTest" = "Take a free test";
+"Study.UnlockQuestions" = "Unlock all";
+"Study.QuizModes" = "Exam Modes";
+"Study.Mode.TodaysQuestion" = "Today’s\nquestion";
+"Study.Mode.TenQuestions" = "10 questions\nquick exam";
+"Study.Mode.MissedQuestions" = "Missed\nquestions set";
+"Study.Mode.RandomSet" = "Random exam\nset";
+"Study.Mode.TimedQuizz" = "Timed\nexam";
+"Study.Mode.TryMe" = "TRY ME!";
+"Study.Course.CourseCount" = "%d tests";
+"Study.Course.Title" = " exam modes";
+"Study.Flashcards.Title" = "Flashcards";
+"Study.Flashcards.TopicsToLearn" = "topics\nto learn";
+"Study.Flashcards.TopicsLearned" = "topics\nlearned";
+
+// MARK: Settings
+"Settings.Title" = "Settings";
+"Settings.Unlock" = "Unlock";
+"Settings.Premium" = "Premium";
+"Settings.ChangeLocale" = "Change locale";
+"Settings.SelectedExam" = "Selected Exam";
+"Settings.RateUs" = "Rate us";
+"Settings.ContactUs" = "Contact us";
+"Settings.TermsOfUse" = "Terms of use";
+"Settings.PrivacyPolicy" = "Privacy Policy";
+"Settings.Topics" = "Change topics";
+"Settings.YourLocale" = "Your locale";
+"Settings.YourLanguage" = "Your language";
+"Settings.Mode" = "Exam mode";
+
+// MARK: Stats
+"Stats.PassRate.Title" = "Current pass rate";
+"Stats.MainRate.TestsTake" = "Tests taken";
+"Stats.MainRate.CorrectAnswers" = "Correct answers";
+"Stats.MainRate.QuestionsTaken" = "Questions taken";
+"Stats.MainRate.LongestStreak" = "Longest streak";
+"Stats.MainRate.AnsweredQuestions" = "Answered questions";
+"Stats.Title" = "Stats";
+"Stats.Day.One" = "day";
+"Stats.Day.Two" = "days";
+"Stats.Day.Many" = "days";
+"Stats.MainRate.LearnedFlashcards" = "Learned flashcard sets";
+
+// MARK: Paygate
+"Paygate.Main.Title" = "KNOW THE QUESTIONS\nBEFOREHAND";
+"Paygate.Main.Cell1" = "Don’t spend hours learning";
+"Paygate.Main.Cell2" = "Train yourself with %i+ questions";
+"Paygate.Main.Cell3" = "Track your stats to motivate yourself";
+"Paygate.Main.Info" = "Secured with iTunes. Cancel anytime.";
+"Paygate.Main.TermsOfUse" = "Terms of use";
+"Paygate.Main.And" = " and ";
+"Paygate.Main.PrivacyPolicy" = "Privacy Policy";
+"Paygate.Main.RestorePurchases" = "Restore purchases";
+"Paygate.Purchase.Failed" = "Failed to make a purchase";
+"Paygate.Continue" = "Continue →";
+
+// MARK: Question
+"Question.Explanation" = "Explanation";
+"Question.Continue" = "Continue";
+"Question.Submit" = "Submit test";
+"Question.Finish" = "Finish";
+"Question.BackToStudying" = "Back to studying";
+"Question.Counter.Score" = "Score";
+"Question.Counter.Question" = "Question";
+"Question.Counter.RemainingTime" = "Remaining time";
+"Question.Title.TodaysQuestion" = "Today’s question";
+"Question.Title.TenQuestions" = "10 questions quick exam";
+"Question.Title.MissedQuestions" = "Missed questions set";
+"Question.Title.RandomSet" = "Random exam set";
+"Question.Title.TimedQuizz" = "Timed exam set";
+
+// MARK: Test Stats
+"TestStats.TestTime" = "your time";
+"TestStats.ComunityAverage" = "comunity average";
+"TestStats.ComunityScore" = "comunity score";
+"TestStats.Attempted" = "Attempted";
+"TestStats.Correct" = "Correct";
+"TestStats.Incorrect" = "Incorrect";
+"TestStats.Filter.Incorrect" = "Incorrect";
+"TestStats.Filter.Correct" = "Correct";
+"TestStats.Filter.All" = "All";
+"TestStats.NextTest" = "Next test";
+"TestStats.TryAgain" = "Try аgаin";
+"TestStats.PassingScore" = "Passing score";
+
+// MARK: Trophy
+"Trophy.LearnMore" = "Learn more";
+"Trophy.Title" = "Pass your CDL exam with 100% assurance";
+
+// MARK: Course Details
+"CourseDetails.Questions" = "questions";
+"CourseDetails.Saved" = "Saved";
+"CourseDetails.Incorrect" = "Incorrect";
+"CourseDetails.PassRate" = "Pass rate";
+
+// MARK: Timed Exam
+"TimedExam.Title" = "Timed test";
+"TimedExam.Subtitle" = "How many minutes?";
+"TimedExam.Button" = "Start";
+
+// MARK: Flashcards
+"Flashcards.Title" = "Flashcards";
+"Flashcards.Count" = "%i flashcards";
+"Flashcards.ShowAnswer" = "Show answer";
+"Flashcards.Knew" = "I knew";
+"Flashcards.DintKnow" = "I didn’t know";
+
+// MARK: TryAgain
+"TryAgain.Title" = "The app failed to perform a\nrequest";
+"TryAgain.SubTitle" = "If there’s a connection issue on your side please try one more time. If the connection is fine and the error keeps on repeating please get in touch with the support";
+"TryAgain.Button" = "Try again";
+"TryAgain.Contact" = "Contact the support";

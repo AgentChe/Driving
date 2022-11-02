@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>drivingprep</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb211280134164229</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>211280134164229</string>
+	<key>FacebookClientToken</key>
+	<string>2745a557c0c703cf097d79fd28d676c8</string>
+	<key>FacebookDisplayName</key>
+	<string>Driving Prep</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSAdvertisingAttributionReportEndpoint</key>
+	<string>https://exams.mapola.org</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>lato-regular.otf</string>
+		<string>lato-bold.otf</string>
+		<string>SF-Pro-Rounded-Bold.otf</string>
+		<string>SF-Pro-Rounded-Regular.otf</string>
+		<string>SF-Pro-Rounded-Semibold.otf</string>
+	</array>
+	<key>branch_key</key>
+	<string>key_live_fi03w1S1xw5QfaX4O2MObmndBqiu8176</string>
+</dict>
+</plist>
