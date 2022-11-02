@@ -110,7 +110,7 @@ PODS:
   - NotificationBannerSwift (3.1.0):
     - MarqueeLabel (~> 4.0.5)
     - SnapKit (~> 5.0.1)
-  - OtterScaleiOS (1.20)
+  - OtterScaleiOS (1.21)
   - PromisesObjC (2.1.1)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
@@ -171,7 +171,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   OtterScaleiOS:
-    :commit: c22a287e4267646e2134df85097f84547b915d04
+    :commit: 9b08b92b89e64076a5c324617bee5a4df5ccbfd5
     :git: https://github.com/AgentChe/OtterScaleiOS.git
 
 SPEC CHECKSUMS:
@@ -195,7 +195,7 @@ SPEC CHECKSUMS:
   MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   NotificationBannerSwift: 49912a48b37e2f55d1cef4e8a38f15394f66a70a
-  OtterScaleiOS: 85caa1135010e0e965ce8f7e363615cddc0a2342
+  OtterScaleiOS: 4f8201feb7ed886c2ae9ba6b0d9f9ed822650433
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -203,6 +203,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: d95b004b353820238806c0ec55e017ca4eb23df2
+PODFILE CHECKSUM: 18c771e6d987bc7a2c48d25dcdbbbe22bdb573df
 
 COCOAPODS: 1.11.2
