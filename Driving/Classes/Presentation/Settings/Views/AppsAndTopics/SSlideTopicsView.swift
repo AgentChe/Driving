@@ -9,11 +9,17 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class SSlideTopicsView: SSlideView {
+final class SSlideTopicsView: UIView {
+    weak var vc: UIViewController?
+    
+    var didFinish: (() -> Void)?
+    
     lazy var titleLabel = makeTitleLabel()
     lazy var topicsView = makeTopicsCollectionView()
     lazy var button = makeButton()
     lazy var preloader = makePreloader()
+    
+    lazy var app = PublishRelay<App>()
     
     private lazy var coursesManager = CoursesManager()
     private lazy var profileManager = ProfileManager()
@@ -23,6 +29,9 @@ final class SSlideTopicsView: SSlideView {
     private lazy var observableRetrySingle = ObservableRetrySingle()
     
     private lazy var disposeBag = DisposeBag()
+    
+    private lazy var elements = makeElements()
+    private lazy var selectedApp = app.asDriver(onErrorDriveWith: .never())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,22 +43,6 @@ final class SSlideTopicsView: SSlideView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func moveToThis() {
-        let elements = makeElements()
-        let app = makeApp()
-        
-        Driver
-            .combineLatest(elements, app) { elements, app -> [TopicsCollectionElement] in
-                let appCode = app?.code ?? ""
-                return elements.filter { $0.course.name.lowercased().contains(appCode.lowercased()) }
-            }
-            .drive(Binder(self) { base, elements in
-                base.topicsView.setup(elements: elements)
-                base.topicsCollectionViewDidChangeSelection()
-            })
-            .disposed(by: disposeBag)
     }
 }
 
@@ -63,42 +56,56 @@ extension SSlideTopicsView: TopicsCollectionViewDelegate {
 // MARK: Private
 private extension SSlideTopicsView {
     func initialize() {
+        Driver
+            .combineLatest(elements, selectedApp) { elements, app -> [TopicsCollectionElement] in
+                elements.filter { $0.course.name.lowercased().contains(app.code.lowercased()) }
+            }
+            .drive(Binder(self) { base, elements in
+                base.topicsView.setup(elements: elements)
+                base.topicsCollectionViewDidChangeSelection()
+            })
+            .disposed(by: disposeBag)
+        
         button.rx.tap
-            .flatMapLatest { [weak self] _ -> Observable<Void> in
+            .withLatestFrom(app)
+            .flatMapLatest { [weak self] app -> Observable<Void> in
                 guard let self = self else {
                     return .never()
                 }
-                
+
                 let selectedCoursesIds = self.topicsView.elements
                     .filter { $0.isSelected }
                     .map { $0.course.id }
-                
+
                 func source() -> Single<Void> {
-                    self.profileManager
+                    let saveApp = self.profileManager
+                        .set(app: app)
+                    
+                    let saveCourses = self.profileManager
                         .set(selectedCoursesIds: selectedCoursesIds)
+                    
+                    return Single
+                        .zip(saveApp, saveCourses)
+                        .mapToVoid()
                 }
-                
+
                 func trigger(error: Error) -> Observable<Void> {
                     self.openError()
                 }
-                
+
                 return self.observableRetrySingle
                     .retry(source: { source() },
                            trigger: { trigger(error: $0) })
             }
             .asDriver(onErrorDriveWith: .never())
             .drive(onNext: { [weak self] in
-                self?.onNext()
+                self?.didFinish?()
             })
             .disposed(by: disposeBag)
         
         activity
-            .drive(onNext: { [weak self] activity in
-                guard let self = self else {
-                    return
-                }
-                
-                activity ? self.preloader.startAnimating() : self.preloader.stopAnimating()
+            .drive(Binder(preloader) { base, activity in
+                activity ? base.startAnimating() : base.stopAnimating()
             })
             .disposed(by: disposeBag)
     }
@@ -123,12 +130,6 @@ private extension SSlideTopicsView {
                    trigger: { trigger(error: $0) })
             .trackActivity(activity)
             .asDriver(onErrorDriveWith: .never())
-    }
-    
-    func makeApp() -> Driver<App?> {
-        profileManager
-            .obtainApp(forceUpdate: false)
-            .asDriver(onErrorJustReturn: nil)
     }
     
     func openError() -> Observable<Void> {

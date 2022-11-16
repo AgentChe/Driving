@@ -24,6 +24,8 @@ final class SettingsOpener {
         view.didNextTapped = {
             vc.dismiss(animated: true)
         }
+        
+        view.moveToThis()
 
         from.present(vc, animated: true)
     }
@@ -41,6 +43,7 @@ private extension SettingsOpener {
         closeButton.frame.origin = CGPoint(x: 16.scale, y: 64.scale)
         closeButton.frame.size = CGSize(width: 24.scale, height: 24.scale)
         closeButton.setImage(UIImage(named: "Settings.Close"), for: .normal)
+        closeButton.tintColor = UIColor.black
         vc.view.addSubview(closeButton)
         
         closeButton.rx.tap
@@ -59,8 +62,7 @@ private extension SettingsOpener {
         case .locale:
             view = STChangeLocaleView()
         case .topics:
-            view = SSlideTopicsView()
-            view.moveToThis()
+            view = SSAppsAndTopicsView()
         case .mode:
             view = SSlideModeView()
         }

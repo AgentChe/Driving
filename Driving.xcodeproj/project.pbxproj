@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DBD864B798A82698365DFBBA /* Pods_Driving.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26EF7CA3D83B659ED924CFD6 /* Pods_Driving.framework */; };
+		DE13495F29250B6A0004376C /* SSAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE13495E29250B6A0004376C /* SSAppsView.swift */; };
+		DE13496229250D4D0004376C /* SSAppsAndTopicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE13496129250D4D0004376C /* SSAppsAndTopicsView.swift */; };
 		DE5BA55F29127B7600662F53 /* Onboarding.Chart.json in Resources */ = {isa = PBXBuildFile; fileRef = DE5BA55E29127B7600662F53 /* Onboarding.Chart.json */; };
 		DE88575D29110B80005C3920 /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88575929110B80005C3920 /* PushNotificationsManager.swift */; };
 		DE88575E29110B80005C3920 /* PushNotificationsAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88575B29110B80005C3920 /* PushNotificationsAuthorizationStatus.swift */; };
@@ -363,6 +365,8 @@
 		26EF7CA3D83B659ED924CFD6 /* Pods_Driving.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Driving.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4258E73F7CBDD7124559BA /* Pods-Driving.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driving.debug.xcconfig"; path = "Target Support Files/Pods-Driving/Pods-Driving.debug.xcconfig"; sourceTree = "<group>"; };
 		835C9E805D02A02F0562DCAF /* Pods-Driving.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driving.release.xcconfig"; path = "Target Support Files/Pods-Driving/Pods-Driving.release.xcconfig"; sourceTree = "<group>"; };
+		DE13495E29250B6A0004376C /* SSAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAppsView.swift; sourceTree = "<group>"; };
+		DE13496129250D4D0004376C /* SSAppsAndTopicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAppsAndTopicsView.swift; sourceTree = "<group>"; };
 		DE5BA55E29127B7600662F53 /* Onboarding.Chart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Chart.json; sourceTree = "<group>"; };
 		DE88575929110B80005C3920 /* PushNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsManager.swift; sourceTree = "<group>"; };
 		DE88575B29110B80005C3920 /* PushNotificationsAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsAuthorizationStatus.swift; sourceTree = "<group>"; };
@@ -736,6 +740,16 @@
 				835C9E805D02A02F0562DCAF /* Pods-Driving.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DE13496329250E390004376C /* AppsAndTopics */ = {
+			isa = PBXGroup;
+			children = (
+				DE13496129250D4D0004376C /* SSAppsAndTopicsView.swift */,
+				DE13495E29250B6A0004376C /* SSAppsView.swift */,
+				DE918DF2291003CE00443765 /* SSlideTopicsView.swift */,
+			);
+			path = AppsAndTopics;
 			sourceTree = "<group>";
 		};
 		DE77B3B6C328B011D0DF7AC6 /* Frameworks */ = {
@@ -1406,10 +1420,10 @@
 		DE918DE2291003CE00443765 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				DE918DE3291003CE00443765 /* SettingsView.swift */,
-				DE918DE4291003CE00443765 /* SettingsViewModel.swift */,
 				DE918DE5291003CE00443765 /* Utils */,
 				DE918DE7291003CE00443765 /* Views */,
+				DE918DE3291003CE00443765 /* SettingsView.swift */,
+				DE918DE4291003CE00443765 /* SettingsViewModel.swift */,
 				DE918DF5291003CE00443765 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -1426,11 +1440,11 @@
 		DE918DE7291003CE00443765 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE13496329250E390004376C /* AppsAndTopics */,
 				DE918DE8291003CE00443765 /* Cells */,
 				DE918DEF291003CE00443765 /* STChangeLocaleView.swift */,
 				DE918DF0291003CE00443765 /* SSlideModeView.swift */,
 				DE918DF1291003CE00443765 /* SSlideView.swift */,
-				DE918DF2291003CE00443765 /* SSlideTopicsView.swift */,
 				DE918DF3291003CE00443765 /* SettingsTableView.swift */,
 				DE918DF4291003CE00443765 /* SettingsTableSection.swift */,
 			);
@@ -2347,6 +2361,7 @@
 				DE91901B291003CF00443765 /* OModeCell.swift in Sources */,
 				DE918F2F291003CE00443765 /* ProductPrice.swift in Sources */,
 				DE918F9B291003CF00443765 /* CourseCell.swift in Sources */,
+				DE13496229250D4D0004376C /* SSAppsAndTopicsView.swift in Sources */,
 				DE918F95291003CF00443765 /* SCBriefDayView.swift in Sources */,
 				DE918FB6291003CF00443765 /* QuestionTableQuestionReferenceCell.swift in Sources */,
 				DE918FA7291003CF00443765 /* FlashcardsViewModel.swift in Sources */,
@@ -2485,6 +2500,7 @@
 				DE91900A291003CF00443765 /* CourseProgressView.swift in Sources */,
 				DE918F64291003CE00443765 /* GetFailedSetRequest.swift in Sources */,
 				DE918F38291003CE00443765 /* GetTestStatsResponseMapper.swift in Sources */,
+				DE13495F29250B6A0004376C /* SSAppsView.swift in Sources */,
 				DE919029291003CF00443765 /* TopicsCollectionView.swift in Sources */,
 				DE919010291003CF00443765 /* OExperienceCursor.swift in Sources */,
 				DE919020291003CF00443765 /* OMinutesAtTimeCell.swift in Sources */,
